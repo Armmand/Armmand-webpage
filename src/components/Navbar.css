@@ -102,3 +102,42 @@ html {
     display: flex;
   }
 }
+
+/* 🔴 Breaking News Banner Styles */
+.breaking-news {
+  background-color: hsl(256, 100%, 61%);
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 999;
+}
+
+.breaking-news-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.breaking-news .weather,
+.breaking-news .time {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.breaking-news .news {
+  flex-grow: 1;
+}
+
+.breaking-news .news marquee {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}

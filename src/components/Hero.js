@@ -1,5 +1,10 @@
 import React from "react";
 import "./Hero.css";
+import myPhoto from '../images/photo2.jpg';
+
+
+
+
 
 function Hero() {
   return (
@@ -9,7 +14,7 @@ function Hero() {
         {/* Image Row */}
         <div className="hero-images">
          
-          <img src="/photo2.jpg" alt="Photo 2" />
+          <img src={myPhoto} alt="Photo 2" />
         
         </div>
 
@@ -17,7 +22,7 @@ function Hero() {
         <p>
           I'm a passionate IT professional dedicated to helping others by
           providing effective solutions, exceptional customer service, and
-          reliable support from North Carolina
+          reliable support.
         </p>
 
         <div className="social-icons">

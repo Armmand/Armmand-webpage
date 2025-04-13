@@ -5,21 +5,25 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import captureImg from "../images/projects/capture.PNG";
+import gappImg from "../images/projects/Gapp.PNG";
+
+
 
 const projects = [
   {
     title: "Cleanest Fade Barbershop App",
-    image: "/projects/capture.PNG",
+    image: captureImg,
     link: "https://example.com/inventory-system",
   },
   {
     title: "Custom Disaster Alert App",
-    image: "/projects/Gapp.PNG",
+    image: gappImg,
     link: "https://example.com/business-site",
   },
   {
     title: "React Portfolio",
-    image: "/projects/portfolio.jpg",
+    image: "",
     link: "https://example.com/react-portfolio",
   },
 ];
