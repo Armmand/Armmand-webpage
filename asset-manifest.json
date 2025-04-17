@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Armmand-webpage/static/css/main.87501501.css",
-    "main.js": "/Armmand-webpage/static/js/main.356e4456.js",
+    "main.css": "/Armmand-webpage/static/css/main.5c599b6d.css",
+    "main.js": "/Armmand-webpage/static/js/main.1f1a8cb2.js",
     "static/media/fa-solid-900.ttf": "/Armmand-webpage/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/Gapp.PNG": "/Armmand-webpage/static/media/Gapp.48f53d9f6b1b5357a0c9.PNG",
     "static/media/fa-brands-400.ttf": "/Armmand-webpage/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.ttf": "/Armmand-webpage/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/Armmand-webpage/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/Armmand-webpage/index.html",
-    "main.87501501.css.map": "/Armmand-webpage/static/css/main.87501501.css.map",
-    "main.356e4456.js.map": "/Armmand-webpage/static/js/main.356e4456.js.map"
+    "main.5c599b6d.css.map": "/Armmand-webpage/static/css/main.5c599b6d.css.map",
+    "main.1f1a8cb2.js.map": "/Armmand-webpage/static/js/main.1f1a8cb2.js.map"
   },
   "entrypoints": [
-    "static/css/main.87501501.css",
-    "static/js/main.356e4456.js"
+    "static/css/main.5c599b6d.css",
+    "static/js/main.1f1a8cb2.js"
   ]
 }
