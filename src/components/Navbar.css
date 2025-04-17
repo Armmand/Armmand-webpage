@@ -105,7 +105,7 @@ html {
 
 /* 🔴 Breaking News Banner Styles */
 .breaking-news {
-  background-color: hsl(256, 100%, 61%);
+  background-color: transparent;
   color: #fff;
   padding: 8px 20px;
   font-size: 0.95rem;
@@ -141,3 +141,4 @@ html {
   font-weight: 600;
   font-size: 0.95rem;
 }
+

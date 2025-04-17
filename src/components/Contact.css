@@ -54,3 +54,8 @@
     color: #555;
   }
   
+  .note {
+    margin-top: 10px;
+    color: #00e676;
+    font-weight: bold;
+  }

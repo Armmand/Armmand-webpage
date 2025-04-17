@@ -7,43 +7,53 @@ function Navbar() {
   const [currentTime, setCurrentTime] = useState(
     new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
   );
-  const [newsHeadlines, setNewsHeadlines] = useState([]);
+  const [headlines, setHeadlines] = useState([]);
+  const [sportsUpdates, setSportsUpdates] = useState([]);
+  const [weather, setWeather] = useState("");
 
-  const toggleMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const handleLinkClick = () => {
-    setIsMobileMenuOpen(false); // Close menu after clicking
-  };
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleLinkClick = () => setIsMobileMenuOpen(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(
         new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
       );
-    }, 60000); // update every minute
+    }, 60000);
     return () => clearInterval(intervalId);
   }, []);
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=d396bee15850403d8e25c1f28f1de986`
-        );
-        const data = await response.json();
-        if (data.articles) {
-          setNewsHeadlines(data.articles.map(article => article.title));
-        }
-      } catch (error) {
-        console.error("Error fetching news:", error);
-      }
-    };
+  
 
-    fetchNews();
-    const newsInterval = setInterval(fetchNews, 300000); // Refresh every 5 minutes
-    return () => clearInterval(newsInterval);
+  // Fetch Sports Updates
+  useEffect(() => {
+    fetch(`https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328`)
+      .then((res) => res.json())
+      .then((data) => {
+        const updates = data.events.slice(0, 5).map((event) => (
+          `${event.strEvent} (${event.dateEvent})`
+        ));
+        setSportsUpdates(updates);
+      });
+  }, []);
+
+  // Fetch Weather
+  useEffect(() => {
+    const city = "";
+    const state = "";
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},US&units=imperial&appid=b9fed19d15348977df9327198a44abf3`
+    )
+    
+      .then((res) => res.json())
+      .then((data) => {
+        const temp = Math.round(data.main.temp);
+        const description = data.weather[0].description;
+        setWeather(`🌤️ ${temp}°F ${city} - ${description}`);
+      })
+      .catch((err) => {
+        setWeather("Weather unavailable");
+      });
   }, []);
 
   return (
@@ -73,11 +83,14 @@ function Navbar() {
 
       <div className="breaking-news">
         <div className="breaking-news-content">
-          <span className="weather">🌤️ 75°F Chapel Hill, NC </span>
+          <span className="weather">{weather}</span>
           <span className="time">{currentTime}</span>
           <span className="news">
-            <marquee behavior="scroll" direction="left">
-              {newsHeadlines.join(" • ")}
+            <marquee behavior="scroll" direction="left" scrollamount="6">
+              {[
+                ...headlines.slice(0, 5),
+                ...sportsUpdates.slice(0, 5)
+              ].join(" • ")}
             </marquee>
           </span>
         </div>
@@ -87,6 +100,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-
